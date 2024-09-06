@@ -1,23 +1,30 @@
 services:
   jira:
+    image: epicmorg/jira:${JIRA_VERSION}
     depends_on:
       - db
-    build:
-      context: ./
-      args:
-        JIRA_VERSION: ${JIRA_VERSION}
-    container_name: jirasoftware
+    container_name: jira
     volumes:
       - jiradata:/var/atlassian/jira
+      - ./jira-opt/lib/atlassian-extras-3.4.6.jar:/opt/atlassian/jira/atlassian-jira/WEB-INF/lib/atlassian-extras-3.4.6.jar
+      - ./jira-opt/lib/atlassian-extras-key-manager-3.4.6.jar:/opt/atlassian/jira/atlassian-jira/WEB-INF/lib/atlassian-extras-key-manager-3.4.6.jar
     ports:
       - '80:8080'
     environment:
+      - "JVM_MINIMUM_MEMORY=512m"
+      - "JVM_MAXIMUM_MEMORY=12288m"
+      - "JVM_SUPPORT_RECOMMENDED_ARGS=-Dupm.plugin.upload.enabled=true"
+      - "CATALINA_OPTS=-Dcom.sun.management.jmxremote.port=8099"
+      - "CATALINA_OPTS=-Dcom.sun.management.jmxremote.ssl=false"
+      - "CATALINA_OPTS=-Dcom.sun.management.jmxremote.authenticate=false"
+      #proxy config
+      - "JIRA_PROXY_NAME="
+      - "JIRA_PROXY_PORT="
+      - "JIRA_PROXY_SCHEME="
+      - "JIRA_PROXY_SECURE="
+      #database config    
       - 'JIRA_DATABASE_URL=postgresql://jira@db/jiradb'
       - 'JIRA_DB_PASSWORD=jellyfish'
-      - 'CATALINA_OPTS= -Xms256m -Xmx4g'
-      - 'JIRA_PROXY_NAME='
-      - 'JIRA_PROXY_PORT='
-      - 'JIRA_PROXY_SCHEME='
       - 'JIRA_DB_HOST=db'
       - 'JIRA_DB_PORT=5432'
 
