@@ -2,9 +2,13 @@ Jira# NOTICE
 
 # Docker image of Atlassian Jira
 Production ready, up-to-date builds of Atlassian Jira - right from the original binary download based on bellsoft-openjdk17
-Special Thanks For Docker Images:
+
+# Special Thanks For Docker Images:
 [@EpicMorg](https://github.com/EpicMorg)
-[![Atlassian Jira](https://img.shields.io/badge/Atlassian%20Jira--brightgreen.svg?style=popout-square)](https://www.atlassian.com/software/jira/download) | [![](https://img.shields.io/docker/pulls/epicmorg/jira.svg?style=popout-square)](https://hub.docker.com/r/epicmorg/jira/) | `Atlassian Jira: Softrware` server.  You also can install `servicedesk`, `core` or `datacenter` editions.
+
+#Image Link
+[![](https://img.shields.io/docker/pulls/epicmorg/jira.svg?style=popout-square)](https://hub.docker.com/r/epicmorg/jira/) 
+This is `Atlassian Jira: Softrware` server.  You also can install `servicedesk`, `core` or `datacenter` editions.
 
 # You may also like
 - [confluence](https://github.com/nmkedk/docker-atlassian-confluence)
