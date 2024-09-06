@@ -4,9 +4,10 @@ Jira# NOTICE
 Production ready, up-to-date builds of Atlassian Jira - right from the original binary download based on bellsoft-openjdk17
 
 # Special Thanks For Docker Images:
-[@EpicMorg](https://github.com/EpicMorg)
+* [@EpicMorg](https://github.com/EpicMorg)
 
-#Image Link
+#Docker Image Link
+
 [![](https://img.shields.io/docker/pulls/epicmorg/jira.svg?style=popout-square)](https://hub.docker.com/r/epicmorg/jira/) 
 This is `Atlassian Jira: Softrware` server.  You also can install `servicedesk`, `core` or `datacenter` editions.
 
