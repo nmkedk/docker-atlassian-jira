@@ -9,6 +9,7 @@ Production ready, up-to-date builds of Atlassian Jira - right from the original 
 #Docker Image Link
 
 [![](https://img.shields.io/docker/pulls/epicmorg/jira.svg?style=popout-square)](https://hub.docker.com/r/epicmorg/jira/) 
+
 This is `Atlassian Jira: Softrware` server.  You also can install `servicedesk`, `core` or `datacenter` editions.
 
 # You may also like
